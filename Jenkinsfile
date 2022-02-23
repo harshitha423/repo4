@@ -4,15 +4,14 @@ pipeline {
     
          stage('Clone Repo') {
            steps {
-             sh 'rm -rf dockertest1'
-             sh 'git clone https://github.com/harshitha423/dockertest1.git
+             sh 'git clone https://github.com/harshitha423/repo4.git
              }
          }
 
          stage('Build Docker Image') {
            steps {
-             sh 'cd /var/lib/jenkins/workspace/pipeline2/dockertest1'
-             sh ' cp /var/lib/jenkins/workspace/pipeline2/dockertest1/* /var/lib/jenkins/workspace/pipeline2'
+             sh 'cd /var/lib/jenkins/workspace/pipeline2/repo4'
+             sh ' cp /var/lib/jenkins/workspace/pipeline2/repo4/* /var/lib/jenkins/workspace/repo4'
              sh 'docker build -t 423445/nginx:v1 .'
              }
          }
